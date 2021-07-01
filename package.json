@@ -1,55 +1,30 @@
 {
   "name": "canhazdb-server",
-  "version": "7.0.2",
-  "description": "A shaded and clustered database communicated over http rest.",
-  "main": "./lib/index.js",
-  "bin": {
-    "canhazdb-server": "lib/cli.js"
-  },
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "chalk": "^4.1.1",
-    "debarrel": "^1.0.1",
-    "final-stream": "^2.0.3",
-    "get-port": "^5.1.1",
-    "hinton": "^1.0.0",
-    "lockbase": "^1.0.9",
-    "minimist": "^1.2.5",
-    "ndjson-fe": "^1.2.7",
-    "npm": "^7.15.1",
-    "qs": "^6.10.1",
-    "reconnecting-websocket": "^4.4.0",
-    "server-destroy": "^1.0.1",
-    "tcpocket": "^5.0.6",
-    "uuid": "^8.3.2",
-    "write-response": "^1.2.3",
-    "ws": "^7.4.6",
-    "wtfnode": "^0.8.4"
-  },
-  "devDependencies": {
-    "basictap": "^1.1.13",
-    "c8": "^7.7.2",
-    "canhazdb-driver-ejdb": "^1.1.3",
-    "eslint": "^7.27.0",
-    "semistandard": "^16.0.0"
-  },
+  "version": "8.0.0",
+  "type": "module",
+  "description": "",
+  "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "./makeCerts.sh && c8 -o /tmp node --unhandled-rejections=strict test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/canhazdb/server.git"
+    "test": "./makeCerts.sh && NODE_ENV=test c8 --check-coverage --lines 89 node test"
   },
   "keywords": [],
   "author": "",
-  "license": "AGPL-3.0",
-  "bugs": {
-    "url": "https://github.com/canhazdb/server/issues"
+  "license": "ISC",
+  "dependencies": {
+    "basictap": "^1.3.1",
+    "chalk": "^4.1.1",
+    "lockbase": "^1.1.0",
+    "logslot": "^2.1.0",
+    "minimist": "^1.2.5",
+    "mql-to-jql": "^1.4.0",
+    "node-ejdb-lite": "^3.4.2",
+    "server-destroy": "^1.0.1",
+    "tcpocket": "^7.3.0"
   },
-  "homepage": "https://github.com/canhazdb/server#readme"
+  "devDependencies": {
+    "c8": "^7.7.3",
+    "eslint": "^7.29.0",
+    "semistandard": "^16.0.1",
+    "uuid": "^8.3.2"
+  }
 }
